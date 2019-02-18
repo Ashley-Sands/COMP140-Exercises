@@ -60,6 +60,7 @@ int main(int, char**)
 	//set the texture we are using, please note we are using one big texture and indexing
 	//using the source rectangel
 	testSprite->SetTexture(charactersTexture);
+
 	//we are taking a slice of the texture from 0,85 on x and y with a width of 16, 16
 	//see spritesheetInfo in assets/sprites folder for details
 	testSprite->SetSourceRectangle(0, 85, 16, 16);

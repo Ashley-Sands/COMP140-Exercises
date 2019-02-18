@@ -1,7 +1,9 @@
 #pragma once
 
+#include "Entity.h"
+
 //Class to draw a texture to the screen
-class Sprite
+class Sprite : public Entity
 {
 public:
 	//Constructor
@@ -31,6 +33,8 @@ public:
 
 	//sets the texture which will be used
 	void SetTexture(SDL_Texture * texture);
+
+	void virtual KillObject() override {};
 
 	//Get the source and dest rectangles
 	const SDL_Rect& GetSourceRectangle();
