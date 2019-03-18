@@ -2,6 +2,8 @@
 //
 
 #include "stdafx.h"
+#include <sstream>
+
 
 class CharacterStats
 {
@@ -38,12 +40,14 @@ int main()
 	stats.Score = 0;
 
 	//Build a string to represent the character - to_string - http://www.cplusplus.com/reference/string/to_string/
-	std::string characterString = "Name: " + stats.Name + " Age: " + std::to_string(stats.Age) + " Health: " + std::to_string(stats.Health) + " Score: " + std::to_string(stats.Score);
+	std::ostringstream characterString;
+	
+	characterString << "Character Details" << std::endl;
+	characterString << "=================" << std::endl;
+	characterString << "Name: " << stats.Name << " Age: " << std::to_string(stats.Age) << " Health: " << std::to_string(stats.Health) << " Score: " << std::to_string(stats.Score);
 
 	//Print out the string
-	std::cout << "Character Details" << std::endl;
-	std::cout << "=================" << std::endl;
-	std::cout << characterString << std::endl;
+	std::cout << characterString.str() << std::endl;
     return 0;
 }
 
